@@ -11,25 +11,10 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
-app.post("/auth/login", (req, res) => {
-  console.log(req.body);
-
-  const token = jwt.sign(
-    {
-      email: req.body.email,
-      fullName: "Steve Jobs",
-      isStudent: true,
-    },
-    "randomPassword-1234"
-  );
-  res.json({
-    succes: "Good job",
-    token,
-  });
+app.post("/auth/register", (req, res) => {
+  
+  
 });
 
 app.listen(5555, (err) => {
